@@ -1,0 +1,22 @@
+on:
+  push:
+    tags: '*'
+
+jobs:
+  release:
+    name: Build and release gem
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+      - name: Set Ruby
+        uses: ruby/setup-ruby@250fcd6a742febb1123a77a841497ccaa8b9e939 # v1.152.0
+        with:
+          ruby-version: '2.6'
+      - name: Build and release gem
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
+        run: |
+          gem build *.gemspec
+          gem push *.gem
+        working-directory: ${{github.workspace}}
