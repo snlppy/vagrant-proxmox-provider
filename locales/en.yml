@@ -1,0 +1,96 @@
+en:
+  vagrant_proxmox:
+    already_running: 'The virtual machine is already up and running'
+    already_stopped: "The virtual machine is already stopped"
+    creating_vm: 'Creating the virtual machine...'
+    destroying_vm: 'Destroying the virtual machine...'
+    done: "Done!"
+    errors:
+      create_vm_timeout: |-
+        Creating the vm on the proxmox server timed out.
+      communication_error: |-
+        Unable to communicate with proxmox server:
+
+        %{error_msg}
+      destroy_vm_timeout: |-
+        Destroying the vm on the proxmox server timed out.
+      no_endpoint_specified: 'No endpoint specified.'
+      no_openvz_os_template_or_openvz_template_file_specified_for_type_openvz: 'No openvz_os_template or openvz_template_file specified for vm_type=:openvz'
+      no_password_specified: 'No password specified.'
+      no_user_name_specified: 'No user_name specified.'
+      no_vm_id_available: |-
+        Unable to create a new virtual machine on the proxmox server.
+        None of the configured vm_ids is available.
+      proxmox_task_failed: |-
+        A task on the proxmox server failed.
+        It returned the following exit status:
+
+        %{proxmox_exit_status}
+      rsync_error: |-
+        There was an error when attemping to rsync a share folder.
+        Please inspect the error message below for more info.
+
+        Host path: %{hostpath}
+        Guest path: %{guestpath}
+        Error: %{stderr}
+      shutdown_vm_timeout: |-
+        Stopping the vm on the proxmox server timed out.
+      start_vm_timeout: |-
+        Starting the vm on the proxmox server timed out.
+      stop_vm_timeout: |-
+        Stopping the vm on the proxmox server timed out.
+      timeout: 'Timeout error'
+      upload_timeout: |-
+        Uploading a file to the proxmox server timed out.
+      vm_create_error: |-
+        Unable to create the virtual machine!
+
+        Cause: %{proxmox_exit_status}
+      vm_destroy_error: |-
+        Unable to destroy the virtual machine!
+
+        Cause: %{proxmox_exit_status}
+      vm_start_error: |-
+        Unable to start the virtual machine!
+
+        Cause: %{proxmox_exit_status}
+      vm_stop_error: |-
+        Unable to stop the virtual machine!
+
+        Cause: %{proxmox_exit_status}
+      vm_shutdown_error: |-
+        Unable to shutdown the virtual machine!
+
+        Cause: %{proxmox_exit_status}
+      vm_not_running: |-
+        VM must be running to execute this command. Run `vagrant up`
+        to start the virtual machine.
+      file_not_found: "File for upload not found"
+      server_upload_error: "Error during upload"
+      ssh_error: Unable to establish an ssh connection to the virtual machine...
+      no_vm_type_specified: "No vm_type specified"
+      no_qemu_iso_or_qemu_iso_file_specified_for_vm_type_openvz: "No qemu_iso or qemu_iso_file specified for vm_type=:qemu"
+      no_qemu_iso_or_qemu_iso_file_specified_for_vm_type_qemu: "No qemu_iso or qemu_iso_file specified for vm_type=:qemu"
+      no_qemu_os_specified_for_vm_type_qemu: "No qemu_os specified for vm_type=:qemu"
+      no_qemu_disk_size_specified_for_vm_type_qemu: "No qemu_disk_size specified for vm_type=:qemu"
+      invalid_node_error: 'Invalid node specified: %{node}'
+    not_created: 'The virtual machine is not created on the server!'
+    rsync_folder: |-
+          Rsyncing folder: %{hostpath} => %{guestpath}
+    shut_down_vm: 'Shutting down the virtual machine...'
+    starting_vm: 'Starting the virtual machine...'
+    states:
+      long_not_created: |-
+        The server is not created. Run `vagrant up` to create it.
+      long_running: |-
+        The server is up and running. Run `vagrant ssh` to access it.
+      long_stopped: |-
+        The server is stopped.
+      short_not_created: |-
+        not created
+      short_running: |-
+        running
+      short_stopped: |-
+        stopped
+    stopping_vm: 'Stopping the virtual machine...'
+    waiting_for_ssh_connection: 'Waiting for SSH connection...'
